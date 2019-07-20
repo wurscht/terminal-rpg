@@ -7,8 +7,8 @@ class Character():
         damage = int(enemy_strength * 1)
         self.hp = int(self.hp - damage)
         print("")
-        print("\033[1;31;40mYou received {0} damage \033[0m".format(damage))
-        print("\033[1;31;40mYour hp fell to {0} \033[0m".format(self.hp))
+        print("\033[1;31;40mYou received {0} damage\033[0m".format(damage))
+        print("\033[1;31;40mYour hp fell to {0}\033[0m".format(self.hp))
 
 
 class Player(Character):
@@ -27,10 +27,10 @@ class Creature(Character):
         self.hp = int(self.hp - damage)
         print("")
         print(
-            "\033[1;32;40mThe enemy received {0} damage \033[0m".format(damage)
+            "\033[1;32;40mThe enemy received {0} damage\033[0m".format(damage)
         )
         print(
-            "\033[1;32;40mThe enemy's hp fell to {0} \033[0m".format(self.hp)
+            "\033[1;32;40mThe enemy's hp fell to {0}\033[0m".format(self.hp)
         ) 
 
 

@@ -49,7 +49,8 @@ def decide_what_to_do(player, enemy):
     if answer == "Fight":
         fight(player, enemy)
     if answer == "Check Inventory" or answer == "Check inventory" or answer == "Inventory": # noqa
-        print("Your Inentory contains: {0}\n".format("".join(player.inventory))) # noqa
+        for item in player.inventory:
+            print("Your Inentory contains: {0}\n".format("".join(item.name))) # noqa
 
 
 def fight(player, enemy):
@@ -72,14 +73,15 @@ def level_up(player):
         player.lvl = player.lvl + 1
         player.strength = player.strength + player.lvl
         player.hp = player.hp + 20 + player.lvl
-        print("-->Congratulation you have reached level {0}<--".format(player.lvl))
+        print("\033[1;33;40m-->Congratulation you have reached level {0}<--\033[0m".format(player.lvl))
 
 
 def loot(player):
     loot = create_items()
     if bool(random.getrandbits(1)):
         item = loot[random.randrange(len(loot))]
-        print("You found a {0}".format(item.name))
+        print("\033[1;32;40mYou found a {0}\033[0m".format(item.name))
+        print("")
         player.inventory.append(item)
 
 
